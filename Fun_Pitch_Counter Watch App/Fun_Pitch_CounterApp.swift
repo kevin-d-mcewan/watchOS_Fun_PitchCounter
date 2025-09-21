@@ -7,11 +7,17 @@
 
 import SwiftUI
 
+// MARK: - App Entry
 @main
-struct Fun_Pitch_Counter_Watch_AppApp: App {
+struct Fun_Pitch_Counter_Watch_App: App {
+    @StateObject private var settings = AppSettings()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoadingView()
+                .environmentObject(settings)
         }
     }
 }
+
+
